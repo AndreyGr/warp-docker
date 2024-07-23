@@ -57,6 +57,9 @@ The container uses [GOST](https://github.com/ginuerzh/gost) to provide proxy, wh
 
 If you modify the port number, you may also need to modify the port mapping in the `docker-compose.yml`.
 
+### Change DNS proxy settings
+The container uses [dnsproxy](https://github.com/AdguardTeam/dnsproxy) to provide dns proxy, where the environment variable `DNSPROXY_ARGS` is used to pass parameters to dnsproxy. The default is `-p 5353` to listen on port 5353 in the container. For more information, refer to [dnsproxy Readme](https://github.com/AdguardTeam/dnsproxy?tab=readme-ov-file#dns-proxy-).
+
 ### Health check
 
 The health check of the container will verify if the WARP client inside the container is working properly. If the check fails, the container will automatically restart. Specifically, 15 seconds after starting, a check will be performed every 15 seconds. If the inspection fails for 3 consecutive times, the container will be marked as unhealthy and trigger an automatic restart.

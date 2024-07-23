@@ -35,5 +35,8 @@ else
     echo "Warp client already registered, skip registration"
 fi
 
+# start dnsproxy
+dnsproxy $DNSPROXY_ARGS &
+
 # start the proxy
 gost $GOST_ARGS
