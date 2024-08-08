@@ -99,6 +99,16 @@ You can also use the `latest` tag to use the latest version of the image.
 
 ## Build
 
+### Local
+Local build example for `arm64` arch
+
+```bash
+docker build -t warp-local --build-arg="DNS_PROXY_VERSION=0.71.2"  --build-arg="GOST_VERSION=2.11.5" --build-arg="TARGETPLATFORM=linux/arm64" .
+```
+*Note: the latest version of warp-cli will be used*
+
+### Github Actions
+
 You can use Github Actions to build the image yourself.
 
 1. Fork this repository.

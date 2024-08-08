@@ -30,7 +30,7 @@ if [ ! -f /var/lib/cloudflare-warp/reg.json ]; then
         warp-cli registration license "$WARP_LICENSE_KEY" && echo "Warp license registered!"
     fi
     # connect to the warp server
-    warp-cli connect
+    warp-cli --accept-tos connect
 else
     echo "Warp client already registered, skip registration"
 fi

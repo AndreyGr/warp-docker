@@ -21,6 +21,12 @@ RUN case ${TARGETPLATFORM} in \
     echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/cloudflare-client.list && \
     apt-get update && \
     apt-get install -y cloudflare-warp && \
+    echo "Install ping (iputils-ping)" && \
+    apt-get install -y iputils-ping && \
+    echo "Install nslookup (dnsutils)" && \
+    apt-get install dnsutils -y && \
+    echo "Install traceroute (traceroute)" && \
+    apt-get install traceroute && \
     apt-get clean && \
     apt-get autoremove -y && \
     curl -LO https://github.com/ginuerzh/gost/releases/download/v${GOST_VERSION}/gost-linux-${ARCH}-${GOST_VERSION}.gz && \
